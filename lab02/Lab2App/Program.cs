@@ -170,7 +170,7 @@ namespace Lab2App
 
             string worksheetName = "Struktura katalogu";
             string statisticsSheetName = "Statystyki";
-            string pathToSearch = @"C:\\Users\Kuba_loc\Desktop\";
+            string pathToSearch = @"C:\\Users\Kuba_loc\Desktop\test";
             int searchDepth = 3;
 
             excelHandler.CreateExcelSheet(worksheetName);
