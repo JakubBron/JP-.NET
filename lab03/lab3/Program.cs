@@ -81,7 +81,7 @@ class Program
             processor.ProcessTransaction();
 
         }
-
+        Console.WriteLine("\nappsetting.json\n");
 
         /* Konfiguracja przez appsetting.json */
         

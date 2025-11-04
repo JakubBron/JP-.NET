@@ -1,0 +1,171 @@
+<Window
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:System="clr-namespace:System;assembly=mscorlib"
+  xmlns:CodeAnalysis="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+  Title="VB Roslyn Compiler"
+  Height="583"
+  Width="600"
+>
+  <Window.Resources>
+    <ObjectDataProvider
+      x:Key="dataFromEnum"
+      MethodName="GetValues"
+      ObjectType="{x:Type System:Enum}"
+    >
+      <ObjectDataProvider.MethodParameters>
+        <x:Type TypeName="CodeAnalysis:OutputKind" />
+      </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+  </Window.Resources>
+  <Grid>
+    <StackPanel Width="120" Margin="450,20,0,0">
+      <Button
+        Command="{Binding AddCodeCommand}"
+        Content="Compile"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Width="120"
+      />
+      <Label
+        Content="Kind of output:"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Width="128"
+      />
+      <ComboBox
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Width="120"
+        ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+        SelectedItem="{Binding OutputTypeTarget}"
+      />
+    </StackPanel>
+    <TextBox
+      Text="{Binding CodeText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+      HorizontalAlignment="Left"
+      Height="243"
+      Margin="10,10,0,0"
+      VerticalAlignment="Top"
+      Width="439"
+      AcceptsReturn="True"
+      TextWrapping="Wrap"
+      VerticalScrollBarVisibility="Auto"
+      FontFamily="Consolas"
+    />
+    <Label
+      Content="Errors:"
+      HorizontalAlignment="Left"
+      Margin="22,266,0,0"
+      VerticalAlignment="Top"
+      Width="60"
+    />
+    <ListBox
+      ItemsSource="{Binding ErrorsList}"
+      HorizontalAlignment="Left"
+      Height="90"
+      Margin="88,266,0,0"
+      VerticalAlignment="Top"
+      Width="334"
+    />
+    <Label
+      Content="Methods:"
+      HorizontalAlignment="Left"
+      Margin="22,361,0,0"
+      VerticalAlignment="Top"
+    />
+    <ListBox
+      ItemsSource="{Binding MethodsList}"
+      SelectedItem="{Binding SelectedMethod}"
+      HorizontalAlignment="Left"
+      Height="90"
+      Margin="88,361,0,0"
+      VerticalAlignment="Top"
+      Width="334"
+    />
+    <Label
+      Content="Variables:"
+      HorizontalAlignment="Left"
+      Margin="22,456,0,0"
+      VerticalAlignment="Top"
+    />
+    <ListBox
+      ItemsSource="{Binding FieldsList}"
+      SelectedItem="{Binding SelectedField}"
+      HorizontalAlignment="Left"
+      Height="90"
+      Margin="88,456,0,0"
+      VerticalAlignment="Top"
+      Width="334"
+    />
+    <TextBox
+      Text="{Binding MethodResult, Mode=TwoWay}"
+      HorizontalAlignment="Left"
+      Height="62"
+      Margin="450,389,0,0"
+      TextWrapping="Wrap"
+      VerticalAlignment="Top"
+      Width="120"
+      IsReadOnly="True"
+    />
+    <TextBox
+      Text="{Binding FieldValue, Mode=TwoWay}"
+      HorizontalAlignment="Left"
+      Height="23"
+      Margin="450,487,0,0"
+      TextWrapping="Wrap"
+      VerticalAlignment="Top"
+      Width="120"
+    />
+    <Button
+      Command="{Binding InvokeMethodCommand}"
+      Content="INVOKE"
+      HorizontalAlignment="Left"
+      Margin="450,347,0,0"
+      VerticalAlignment="Top"
+      Width="120"
+      RenderTransformOrigin="0.272,-0.525"
+    />
+    <Button
+      Command="{Binding SetFieldCommand}"
+      Content="SET"
+      HorizontalAlignment="Left"
+      Margin="450,515,0,0"
+      VerticalAlignment="Top"
+      Width="120"
+    />
+    <TextBox
+      Text="{Binding FieldType, Mode=OneWay}"
+      HorizontalAlignment="Left"
+      Height="23"
+      Margin="450,459,0,0"
+      TextWrapping="Wrap"
+      VerticalAlignment="Top"
+      Width="120"
+      IsReadOnly="True"
+    />
+    <Label
+      Content="Parameter:"
+      HorizontalAlignment="Left"
+      Margin="450,295,0,0"
+      VerticalAlignment="Top"
+      Width="80"
+    />
+    <Label
+      Content="Result:"
+      HorizontalAlignment="Left"
+      Margin="450,363,0,0"
+      VerticalAlignment="Top"
+      Width="67"
+    />
+    <TextBox
+      Text="{Binding MethodParameter, Mode=TwoWay}"
+      HorizontalAlignment="Left"
+      Height="21"
+      Margin="450,321,0,0"
+      TextWrapping="Wrap"
+      VerticalAlignment="Top"
+      Width="120"
+    />
+  </Grid>
+</Window>
