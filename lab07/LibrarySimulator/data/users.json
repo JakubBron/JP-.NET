@@ -1,0 +1,89 @@
+[
+  {
+    "Id": "p5",
+    "Description": {
+      "Name": "Johny",
+      "Surname": "Kowalski",
+      "BirthDate": "2025-11-11T13:12:07.043643Z",
+      "LibraryCardId": "2137",
+      "Email": null,
+      "Contact": {
+        "Case": "PhoneOnly",
+        "Fields": [
+          "600600600"
+        ]
+      }
+    },
+    "DepositUSD": 20.0,
+    "JoinDate": "2025-11-11T13:11:55.0466895Z",
+    "Status": {
+      "Case": "Premium"
+    },
+    "PenaltiesPLN": 0.0
+  },
+  {
+    "Id": "p1",
+    "Description": null,
+    "DepositUSD": 30.0,
+    "JoinDate": "2025-11-11T13:10:06.3543858Z",
+    "Status": {
+      "Case": "Standard"
+    },
+    "PenaltiesPLN": 0.0
+  },
+  {
+    "Id": "p2",
+    "Description": {
+      "Name": "Jan",
+      "Surname": "Nowak",
+      "BirthDate": "1985-05-05T00:00:00",
+      "LibraryCardId": "B234",
+      "Email": null,
+      "Contact": {
+        "Case": "AddressOnly",
+        "Fields": [
+          "Warszawa, ul. Prosta 1"
+        ]
+      }
+    },
+    "DepositUSD": 30.0,
+    "JoinDate": "2025-10-12T13:09:15.5926321Z",
+    "Status": {
+      "Case": "Standard"
+    },
+    "PenaltiesPLN": 10.0
+  },
+  {
+    "Id": "p3",
+    "Description": null,
+    "DepositUSD": 20.0,
+    "JoinDate": "2023-09-03T13:09:15.5926326Z",
+    "Status": {
+      "Case": "Premium"
+    },
+    "PenaltiesPLN": 0.0
+  },
+  {
+    "Id": "p4",
+    "Description": {
+      "Name": "Ewa",
+      "Surname": "Wi\u015Bniewska",
+      "BirthDate": "1995-07-07T00:00:00",
+      "LibraryCardId": "C345",
+      "Email": "ewa@example.com",
+      "Contact": {
+        "Case": "PhoneAndAddress",
+        "Fields": [
+          "600333444",
+          "Krak\u00F3w, Rynek 2"
+        ]
+      }
+    },
+    "DepositUSD": 100.0,
+    "JoinDate": "2025-11-06T13:09:15.5926503Z",
+    "Status": {
+      "Case": "Standard"
+    },
+    "PenaltiesPLN": 0.0
+  }
+]

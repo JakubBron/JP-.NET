@@ -6,10 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <!-- ORDER OF INCLUDES MATTERS! -->
+	  <Compile Include="CustomTypes\String50.fs" />
+	  <Compile Include="CustomTypes\WrappedString.fs" />
+	  <Compile Include="CustomTypes\EmailAddress.fs" />
+	  <Compile Include="CustomTypes\ContactInfo.fs" />
+	  <Compile Include="CustomTypes\Tests.fsx" />
+
 	  <Compile Include="Stock.fsx" />
 	  <Compile Include="StockAnalyzer.fs" />
-    <None Include="PrevTasks.fs" />
+    <Compile Include="PrevTasks.fs" />
     <Compile Include="Library.fs" />
+	<Compile Include="Signatures.fs" />
   </ItemGroup>
 
   <ItemGroup>

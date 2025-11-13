@@ -1,6 +1,4 @@
-﻿module PrevTasks
-
-
+﻿module Script
 
 let y = 0;
 // result is, in fact, > val y: int = 0
@@ -62,7 +60,7 @@ let sumOfSquaresClearer nums =
 // calling: sumOfSquaresClearer [1;2;3;4];;
 // result: val it: int = 30
 
-
+#r "nuget: FSharp.Collections.ParallelSeq"
 open FSharp.Collections.ParallelSeq
 let sumOfSquaresParallel nums = 
     nums
@@ -97,6 +95,7 @@ let prices =
 // Example: processing CSV data
 // calling: prices;;
 
+#r "nuget: XPlot.Plotly"
 open XPlot.Plotly
 Chart.Line(prices).Show()
 
